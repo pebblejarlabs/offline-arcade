@@ -13,7 +13,7 @@ When Chrome reports one of the configured offline navigation failures, the backg
 
 - `manifest.json`: Extension manifest and web accessible resources
 - `background.js`: Redirects supported offline errors to the game page
-- `snake.html`: Shared extension UI, launcher screen, and canvas container
+- `index.html`: Shared extension UI, launcher screen, and canvas container
 - `app.js`: Game selection flow and the implementation of the actual games
 
 ## Development

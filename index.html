@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Offline Arcade</title>
+    <style>
+        @font-face {
+            font-family: 'Press Start 2P';
+            src: url('Press_Start_2P.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background-color: #202124;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Press Start 2P', 'Courier New', monospace;
+            color: #9a9fa5;
+            user-select: none;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .app {
+            width: 640px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .ui {
+            width: 640px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            visibility: hidden;
+            min-height: 32px;
+        }
+        .ui.active {
+            visibility: visible;
+        }
+        #score,
+        #backButton {
+            font-size: 16px;
+        }
+        h1 {
+            font-size: 18px;
+            margin: 0;
+        }
+        .controls {
+            margin-top: 15px;
+            font-size: 10px;
+            color: #9a9fa5;
+            text-align: center;
+            min-height: 24px;
+            line-height: 1.6;
+        }
+        .screen {
+            width: 640px;
+            min-height: 640px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .screen.active {
+            display: flex;
+        }
+        .launch-card {
+            width: 100%;
+            border: 2px solid #9a9fa5;
+            padding: 28px 24px;
+            box-sizing: border-box;
+            text-align: center;
+            background: linear-gradient(180deg, #202124 0%, #17181a 100%);
+        }
+        .launch-card p {
+            margin: 18px 0 26px;
+            font-size: 10px;
+            line-height: 1.8;
+        }
+        .game-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .game-button,
+        .link-button {
+            width: 100%;
+            border: 2px solid #9a9fa5;
+            background: transparent;
+            color: #9a9fa5;
+            font: inherit;
+            padding: 14px 12px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .game-button:hover,
+        .game-button:focus,
+        .link-button:hover,
+        .link-button:focus {
+            color: #202124;
+            background-color: #9a9fa5;
+            outline: none;
+        }
+        #backButton {
+            width: auto;
+            padding: 8px 12px;
+            font-size: 10px;
+        }
+        #gameCanvas {
+            display: none;
+            border: 2px solid #9a9fa5;
+            background-color: #202124;
+        }
+        #gameCanvas.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="ui" id="gameUi">
+            <button id="backButton" class="link-button" type="button">MENU</button>
+            <h1 id="title">SNAKE</h1>
+            <div id="score">SCORE 00000</div>
+        </div>
+
+        <div class="screen active" id="launchScreen">
+            <div class="launch-card">
+                <h1>OFFLINE ARCADE</h1>
+                <p>CHOOSE A GAME TO START.</p>
+                <div class="game-list">
+                    <button class="game-button" type="button" data-game="snake">PLAY SNAKE</button>
+                    <button class="game-button" type="button" data-game="flappy">PLAY FLAPPY BIRD</button>
+                </div>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas" width="640" height="640"></canvas>
+        <div class="controls" id="controlsText">CHOOSE A GAME TO START.</div>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>

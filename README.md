@@ -25,3 +25,9 @@ When Chrome reports one of the configured offline navigation failures, the backg
 5. After making edits in the game files, reload the extension
 
 After changes, reload the unpacked extension from `chrome://extensions` and test both game flows.
+
+## TODO
+
+- [ ] Add support for more games
+- [ ] Ensure all games follow the same theme as Dino
+- [ ] Add option for Dino game as well

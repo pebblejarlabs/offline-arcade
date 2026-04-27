@@ -29,5 +29,4 @@ After changes, reload the unpacked extension from `chrome://extensions` and test
 ## TODO
 
 - [ ] Add support for more games
-- [ ] Ensure all games follow the same theme as Dino
 - [ ] Add option for Dino game as well

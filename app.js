@@ -16,9 +16,9 @@ const colors = {
     snakeEye: "#ffffff",
     snakeFood: "#f28b82",
     flappySky: "#202124",
-    flappyPipe: "#9aa06d",
-    flappyBird: "#fbbc04",
-    flappyBeak: "#ea4335",
+    flappyPipe: "#9a9fa5",
+    flappyBird: "#535353",
+    flappyBeak: "#9a9fa5",
     flappyGround: "#535353",
     overlay: "rgba(31, 32, 35, 0.7)"
 };
@@ -396,14 +396,19 @@ function drawBird(bird) {
 
     ctx.fillStyle = colors.flappyBird;
     ctx.beginPath();
-    ctx.arc(0, 0, bird.radius, 0, Math.PI * 2);
+    ctx.ellipse(0, 0, bird.radius * 1.1, bird.radius * 0.7, 0, 0, Math.PI * 2);
     ctx.fill();
+    ctx.strokeStyle = colors.flappyPipe;
+    ctx.beginPath();
+    ctx.lineWidth = 2.5;
+    ctx.ellipse(0, 0, bird.radius * 1.2, bird.radius * 0.8, 0, 0, Math.PI * 2);
+    ctx.stroke();
 
     ctx.fillStyle = colors.flappyBeak;
     ctx.beginPath();
-    ctx.moveTo(bird.radius - 1, -3);
-    ctx.lineTo(bird.radius + 10, 0);
-    ctx.lineTo(bird.radius - 1, 4);
+    ctx.moveTo(bird.radius + 1, -3);
+    ctx.lineTo(bird.radius + 12, 0);
+    ctx.lineTo(bird.radius + 1, 4);
     ctx.closePath();
     ctx.fill();
 
